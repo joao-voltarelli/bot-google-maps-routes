@@ -20,7 +20,7 @@ class Bot(DesktopBot):
         Path(path_dir).mkdir(exist_ok=True)
 
         #READING THE ADDRESSES WORKSHEET AND FILTERING THE DATA
-        data = pd.read_excel('routes.xlsx')
+        data = pd.read_excel(self.get_resource_abspath('routes.xlsx'))
         data.dropna(axis='columns', how='all')
         print(data)
         routes_prints = []
@@ -36,11 +36,11 @@ class Bot(DesktopBot):
         #FOR EACH LINE OF THE WORKSHEET, SEARCH THE ROUTE ON THE MAP AND COLLECT THE INFORMATION
         for index, row in data.iterrows():
             for col in data.columns:
-                if str(col) == 'Source address':
+                if 'Source address' in str(col):
                     from_address = str(row[col])
-                elif str(col) == 'Destination address':
+                elif 'Destination address' in str(col):
                     to_address = str(row[col])
-                elif str(col) == 'Transport':
+                elif 'Transport' in str(col):
                     transport = str(row[col])
 
             print('Looking for routes to => ' + from_address + ' - ' +  to_address)

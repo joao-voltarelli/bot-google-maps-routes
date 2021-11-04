@@ -18,7 +18,7 @@ with open(path.join(here, 'requirements.txt')) as requirements_file:
 
 
 setup(
-    name="GoogleMapsRoutesBot-Python",
+    name="GoogleMapsRoutesBot",
     version=version,
     description="first sidequest bo",
     long_description=readme,
@@ -26,7 +26,7 @@ setup(
     packages=find_packages(exclude=['docs', 'tests']),
     include_package_data=True,
     package_data={
-        "GoogleMapsRoutesBot-Python": [
+        "GoogleMapsRoutesBot": [
             # When adding files here, remember to update MANIFEST.in as well,
             # or else they will not be included in the distribution on PyPI!
             # 'path/to/data_file',
