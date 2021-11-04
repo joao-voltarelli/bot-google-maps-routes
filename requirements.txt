@@ -1,0 +1,2 @@
+botcity-framework-core>=0.1.1
+botcity-maestro-sdk
