@@ -74,10 +74,6 @@ class Bot(DesktopBot):
                 if not self.find( "plane", matching=0.97, waiting_time=10000):
                     self.not_found("plane")
                 self.click(4000)
-            else:
-                if not self.find( "recommended", matching=0.97, waiting_time=10000):
-                    self.not_found("recommended")
-                self.click(4000)
 
             if not self.find( "route_details", matching=0.97, waiting_time=10000):
                 self.not_found("route_details")
@@ -91,6 +87,9 @@ class Bot(DesktopBot):
             routes_link.append(self.get_clipboard())
             if not self.find( "back", matching=0.97, waiting_time=10000):
                 self.not_found("back")
+            self.click(2000)
+            if not self.find( "recommended", matching=0.97, waiting_time=10000):
+                self.not_found("recommended")
             self.click(2000)
             if not self.find( "close_routes", matching=0.97, waiting_time=10000):
                 self.not_found("close_routes")
